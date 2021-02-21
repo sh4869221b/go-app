@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"time"
@@ -17,6 +18,7 @@ func Get(c echo.Context) error {
 func getUrls(urls []string) string {
 	var lists = ""
 	for _, url := range urls {
+		fmt.Println(url)
 		resp, err := http.Get(url)
 		if err != nil {
 			continue
