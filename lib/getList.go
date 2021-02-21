@@ -21,12 +21,12 @@ func getUrls(urls []string) string {
 		fmt.Println(url)
 		resp, err := http.Get(url)
 		if err != nil {
-			fmt.Println(err.Error())
+			fmt.Println("error:" + err.Error())
 			continue
 		}
 		defer resp.Body.Close()
+		fmt.Println(resp.Status)
 		body, _ := ioutil.ReadAll(resp.Body)
-		fmt.Println(body)
 		lists += string(body)
 	}
 	return lists
