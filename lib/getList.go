@@ -21,7 +21,7 @@ func getUrls(urls []string) string {
 		fmt.Println(url)
 		resp, err := http.Get(url)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println(err.Error())
 			continue
 		}
 		defer resp.Body.Close()
