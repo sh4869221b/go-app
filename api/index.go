@@ -14,7 +14,7 @@ func hello(c echo.Context) error {
 }
 
 func hello2(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello World2:"+time.Now().Format("200601"))
+	return c.String(http.StatusOK, "https://280blocker.net/files/280blocker_adblock_"+time.Now().Format("200601")+".txt")
 }
 
 // Handler is router
