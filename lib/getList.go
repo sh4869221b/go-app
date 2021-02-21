@@ -3,13 +3,14 @@ package lib
 import (
 	"io/ioutil"
 	"net/http"
+	"time"
 
 	"github.com/labstack/echo/v4"
 )
 
 // Get is getList
 func Get(c echo.Context) error {
-	urls := []string{"https://280blocker.net/files/280blocker_adblock.txt", "https://raw.githubusercontent.com/nanj-adguard/nanj-filter/master/nanj-filter.txt", "https://blog-imgs-116-origin.fc2.com/b/t/o/btonews/5ch_matome_filter.txt", "https://raw.githubusercontent.com/tofukko/filter/master/Adblock_Plus_list.txt"}
+	urls := []string{"https://280blocker.net/files/280blocker_adblock_" + time.Now().Format("200601") + ".txt"}
 	return c.String(http.StatusOK, getUrls(urls))
 }
 
